@@ -7,7 +7,7 @@ public class CharacterMoving : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
     
-    [SerializeField] private Rigidbody2D rigidbody2d;
+    private Rigidbody2D _rigidbody2d;
     
     private Vector2 _movement;
     
@@ -15,7 +15,7 @@ public class CharacterMoving : MonoBehaviour
     
     private void Awake()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        _rigidbody2d = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
 
@@ -31,6 +31,6 @@ public class CharacterMoving : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        rigidbody2d.MovePosition(rigidbody2d.position + _movement * moveSpeed * Time.fixedDeltaTime);
+        _rigidbody2d.MovePosition(_rigidbody2d.position + _movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
