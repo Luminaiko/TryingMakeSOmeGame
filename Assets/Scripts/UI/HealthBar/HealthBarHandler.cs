@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HealthBarHandler : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
+    private Slider _slider;
 
     private void Awake()
     {
@@ -23,6 +23,5 @@ public class HealthBarHandler : MonoBehaviour
     {
         _slider.value = health;
     }
-    
     
 }
